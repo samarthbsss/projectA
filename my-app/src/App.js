@@ -14,6 +14,7 @@ import { Logo } from './Logo';
 import Home from './Components/home';
 
 function App() {
+
   return (
     <ChakraProvider theme={theme}>
       <Home/>

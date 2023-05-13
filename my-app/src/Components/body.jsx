@@ -20,7 +20,7 @@ import { FaCode, FaDatabase, FaServer } from "react-icons/fa";
 
 const Body=()=>{
     return<>
-     <Flex p={4} align="center" justify="center" border='2px solid red' marginTop='10px' >
+     <Flex p={4} align="center" justify="center" border='2px solid red'  display={{base:"block",md:'flex'}} marginTop='5.3rem' >
       <Box w="40%" mr="4">
         <Image
           borderRadius="full"

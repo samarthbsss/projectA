@@ -26,6 +26,7 @@ const Navbar = () => {
     setIsMobile(!isMobile);
   };
 
+
   return (
     <Flex
       as="nav"
@@ -37,6 +38,7 @@ const Navbar = () => {
       color="white"
       position='fixed'
       width='100%'
+    top='0%'
      
     >
       <Box>
@@ -56,10 +58,12 @@ const Navbar = () => {
       <Box
         display={{ base: isMobile ? "block" : "none", md: "flex" }}
         width={{ base: "full", md: "auto" }}
-        alignItems="center"
+        // alignItems="left"
         flexGrow={1}
+        // border='1px solid red'
       >
         <Stack
+    //  border='1px solid red'
           direction={{ base: "column", md: "row" }}
           spacing={{ base: 4, md: 8 }}
           align={{ base: "center", md: "center" }}
@@ -71,10 +75,15 @@ const Navbar = () => {
           <Link href="/contact" fontWeight="medium">
             Contact
           </Link>
-          <ColorModeSwitcher justifySelf="flex-end" border='1px solid red' />
+   
+          <Button>Skills</Button>
+          <Button>Resume</Button>
+        
         </Stack>
       </Box>
+      <ColorModeSwitcher justifySelf="flex-end" />
     </Flex>
+    
   );
 };
 
