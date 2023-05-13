@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import {
   ChakraProvider,
+  Icon, Link,
   Box,
   Text,
   Formik,
-  Link,
+
   VStack,
   Code,
   Grid,
@@ -19,7 +20,7 @@ import {
   FormErrorMessage,
   FormHelperText,
   HStack,
-  Icon,
+ 
   Button,
   Textarea,
   useToast,
@@ -27,6 +28,7 @@ import {
 } from '@chakra-ui/react';
 import mes from '../Images/send.gif'
 import send from '../Images/send.svg'
+import { FaGithub, FaLinkedin, FaEnvelope, FaPhone } from 'react-icons/fa';
 
 const Contact = () => {
   const [name, setName] = useState('');
@@ -85,19 +87,41 @@ const Contact = () => {
 
   return (
     <>
+     <Text align='center' fontSize='4xl'>Send me a Message!</Text>
+     <Text align='center' fontSize='2xl'>Got a question or proposal, or just want to say hello? Go ahead.</Text>
+  
       <Flex
       onMouseEnter={() => setIsPlaying(true)}
       onMouseLeave={() => setIsPlaying(false)}
+      alignContent='center'
+      justifyContent='space-around'
+      padding='2rem'
       >
       
-   <div style={{width:'50rem',height:'50rem'}}>
+   {/* <div style={{width:'45rem',height:'45rem'}}>
    <img src={isPlaying ? mes : send} alt="Preview" style={{height:'100%',weight:'100%'}} />
 
-   </div>
-  
-      <Box display='flex' alignContent='center' justifyContent='center'>
-      
-      <Text>Send me a Message!</Text>
+   </div> */}
+   <Box width='45rem' height='45rem'>
+    <Image src={isPlaying ? mes : send} alt="Preview" height='100%'weight='100%' />
+   </Box>
+   
+      <Box paddingTop='5rem' border='1px solid red'>
+     
+      <HStack paddingLeft='30%' spacing={4} gap={2}>
+      <Link href="https://github.com">
+        <Icon as={FaGithub} boxSize={6} />
+      </Link>
+      <Link href="https://linkedin.com">
+        <Icon as={FaLinkedin} boxSize={6} />
+      </Link>
+      <Link href="mailto:samarthbsacharya@example.com">
+        <Icon as={FaEnvelope} boxSize={6} />
+      </Link>
+      <Link href="tel:+1234567890">
+        <Icon as={FaPhone} boxSize={6} />
+      </Link>
+    </HStack>
         <form  onSubmit={handleSubmit} >
 
         
@@ -108,7 +132,8 @@ const Contact = () => {
           <FormLabel>Email address</FormLabel>
           <Input type="email" placeholder='Enter Your Email' value={email} onChange={(e) => setEmail(e.target.value)}/>
           {/* <FormHelperText>We'll never share your email.</FormHelperText> */}
-            
+       
+
           <Textarea placeholder='Drop me a message!'  value={message} onChange={(e) => setMessage(e.target.value)} />
             <Button type='submit'>Submit</Button>
         </FormControl>
