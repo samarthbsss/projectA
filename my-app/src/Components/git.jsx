@@ -32,13 +32,13 @@ import {
     const [isHovering, setIsHovering] = useState(false);
     return <>
 
-      <Text align='center' fontSize='4xl' padding={4}>GitHub Overview</Text>
+      <Text  align='center' fontSize='4xl' padding={4}>My GitHub Contribution</Text>
       <Flex alignContent='center'justifyContent='center' gap={4}>
-        <Image  src='https://github-readme-stats.vercel.app/api?username=samarthbsss&theme=dark&hide_border=true&include_all_commits=false&count_private=true'/>
+        <Image className='gitlang' src='https://github-readme-stats.vercel.app/api?username=samarthbsss&theme=dark&hide_border=true&include_all_commits=false&count_private=true'/>
 
-        <Image src="https://github-readme-streak-stats.herokuapp.com/?user=samarthbsss&theme=dark&hide_border=true" />
+        <Image className='gitlang' src="https://github-readme-streak-stats.herokuapp.com/?user=samarthbsss&theme=dark&hide_border=true" />
       </Flex>
-      <div className="gitcal" style={{border:'1px solid red',marginLeft:'4rem', display:'flex', alignContent:'center', justifyContent:'center', width:'93%' }} >
+      <div className="gitcal" style={{padding:'2rem',border:'1px solid red',marginLeft:'4rem', display:'flex', alignContent:'center', justifyContent:'center', width:'93%' }} >
       
       <GitHubCalendar
           username="samarthbsss"

@@ -96,12 +96,9 @@ const Contact = () => {
       alignContent='center'
       justifyContent='space-around'
       padding='2rem'
+      id='contact'
       >
-      
-   {/* <div style={{width:'45rem',height:'45rem'}}>
-   <img src={isPlaying ? mes : send} alt="Preview" style={{height:'100%',weight:'100%'}} />
-
-   </div> */}
+        
    <Box width='45rem' height='45rem'>
     <Image src={isPlaying ? mes : send} alt="Preview" height='100%'weight='100%' />
    </Box>
@@ -109,16 +106,16 @@ const Contact = () => {
       <Box paddingTop='5rem' border='1px solid red'>
      
       <HStack paddingLeft='30%' spacing={4} gap={2}>
-      <Link href="https://github.com">
+      <Link href="https://github.com/samarthbsss">
         <Icon as={FaGithub} boxSize={6} />
       </Link>
-      <Link href="https://linkedin.com">
+      <Link href="https://www.linkedin.com/in/samarthbsacharya/">
         <Icon as={FaLinkedin} boxSize={6} />
       </Link>
       <Link href="mailto:samarthbsacharya@example.com">
         <Icon as={FaEnvelope} boxSize={6} />
       </Link>
-      <Link href="tel:+1234567890">
+      <Link href="tel:+8792801332">
         <Icon as={FaPhone} boxSize={6} />
       </Link>
     </HStack>

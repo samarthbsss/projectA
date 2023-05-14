@@ -30,12 +30,13 @@ const About=()=>{
 
 
     return <>
-     <Text fontSize='3xl'   mb={4} align='center'>About me</Text>
+     <Text fontSize='3xl'   mb={4} align='center' >About me</Text>
     <Box
     display='flex'
     alignContent='center'
     justifyContent='space-around'
     padding='2rem'
+    id='about'
     >   
     
         {/* <Image src={gif} /> */}

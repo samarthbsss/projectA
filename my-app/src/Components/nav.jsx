@@ -13,8 +13,9 @@ import {
   DrawerHeader,
   DrawerBody,
   Stack,
-  Link,
+  Link
 } from "@chakra-ui/react";
+// import { Link } from "react-scroll";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import { ColorModeSwitcher } from '../ColorModeSwitcher'
 
@@ -69,16 +70,24 @@ const Navbar = () => {
           align={{ base: "center", md: "center" }}
           pt={{ base: 4, md: 0 }}
         >
-          <Link href="/about" fontWeight="medium">
+          <Link href="#about" fontWeight="medium">
             About
           </Link>
-          <Link href="/contact" fontWeight="medium">
+          <Link href="#contact" fontWeight="medium">
             Contact
           </Link>
-   
-          <Button>Skills</Button>
-          <Button>Resume</Button>
-        
+          <Link href="#contact" fontWeight="medium">
+           Git
+          </Link>
+          <Link href="#project" fontWeight="medium">
+           Projects
+          </Link>
+          <Link href="#skills" fontWeight="medium">
+           Skills
+          </Link>
+          <Link href="#resume" fontWeight="medium">
+           Resume
+          </Link> 
         </Stack>
       </Box>
       <ColorModeSwitcher justifySelf="flex-end" />
