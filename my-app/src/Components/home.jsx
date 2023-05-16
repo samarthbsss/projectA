@@ -17,10 +17,8 @@ const Home = () => {
    
   return (
     <>
-     <Navbar />
-   
-   
-      <Body />
+    <Box w='100%' h='100%'>
+    <Body />
       <About/>
       
       {/* <TechStack/> */}
@@ -33,6 +31,11 @@ const Home = () => {
       <Contact/>
       <Footer/>
 
+    </Box>
+     <Navbar />
+   
+   
+    
    
     </>
   );

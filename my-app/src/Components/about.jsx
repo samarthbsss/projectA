@@ -30,17 +30,16 @@ const About=()=>{
 
 
     return <>
-     <Text fontSize='3xl'   mb={4} align='center' >About me</Text>
+     <Heading as="h2" size="2xl" textAlign="center" mb={12} >About me</Heading>
     <Box
     display='flex'
     alignContent='center'
     justifyContent='space-around'
     padding='2rem'
     id='about'
+    border='1ps solid red'
     >   
-    
-        {/* <Image src={gif} /> */}
-        <Image src={coding} borderRadius='50%'/>
+        <Image src={coding} borderRadius='50%' />
         <Box alignContent='center'justifyContent='center' >
       {/* <Heading as="h2" size="lg" mb={4}>About Me</Heading> */}
       <UnorderedList>
@@ -49,7 +48,9 @@ const About=()=>{
         <ListItem>Hands-on experience building React apps in both front-end and back-end roles</ListItem>
         <ListItem>Portfolio includes six major projects and 15+ mini projects, showcasing teamwork, leadership, and communication skills</ListItem>
         <ListItem>Quick learner who stays up-to-date with industry trends and technologies</ListItem>
-        <ListItem>Looking for an opportunity to apply skills and expertise to new and challenging projects</ListItem>
+        <ListItem>Looking for an opportunity to apply skills and expertise to new and challenging projects
+        FaGithub, FaLinkedin, FaEnvelope, FaPhone 
+        </ListItem>
       </UnorderedList>
     </Box>
     </Box>

@@ -100,22 +100,27 @@ const Contact = () => {
       >
         
    <Box width='45rem' height='45rem'>
-    <Image src={isPlaying ? mes : send} alt="Preview" height='100%'weight='100%' />
+    <Image src={isPlaying ? mes : send} alt="Preview" height='100%'weight='100%' 
+      // borderRadius="full" // This sets the border radius to make it round
+      // overflow="hidden" // This ensures the GIF stays within the rounded border
+      boxShadow="md" // This adds a shadow effect (optional)
+      maxWidth="100%"
+        />
    </Box>
    
       <Box paddingTop='5rem' border='1px solid red'>
      
-      <HStack paddingLeft='30%' spacing={4} gap={2}>
-      <Link href="https://github.com/samarthbsss">
+    <HStack paddingLeft='30%' spacing={4} gap={2}>
+      <Link href="https://github.com/samarthbsss"  target="_blank">
         <Icon as={FaGithub} boxSize={6} />
       </Link>
-      <Link href="https://www.linkedin.com/in/samarthbsacharya/">
+      <Link href="https://www.linkedin.com/in/samarthbsacharya/"  target="_blank">
         <Icon as={FaLinkedin} boxSize={6} />
       </Link>
-      <Link href="mailto:samarthbsacharya@example.com">
+      <Link href="mailto:samarthbsacharya@example.com"  target="_blank">
         <Icon as={FaEnvelope} boxSize={6} />
       </Link>
-      <Link href="tel:+8792801332">
+      <Link href="tel:+8792801332"  target="_blank">
         <Icon as={FaPhone} boxSize={6} />
       </Link>
     </HStack>

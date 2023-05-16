@@ -7,12 +7,17 @@ import {
   Link,
   Flex,
   IconButton,
+  Heading
 } from '@chakra-ui/react';
 import { FiGithub, FiEye, FiMoreHorizontal } from 'react-icons/fi';
 
 function Projects() {
   return (
+    
     <Box width='90%' height='90%'>
+       <Heading as="h2" size="2xl" textAlign="center" mb={12}>
+          Projects
+        </Heading>
       <Grid templateColumns="repeat(2, 1fr)" gap={3}>
         <GridItem>
           <Box borderWidth="1px" borderRadius="lg" overflow="hidden">

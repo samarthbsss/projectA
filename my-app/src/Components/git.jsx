@@ -23,6 +23,7 @@ import {
     Textarea,
     useToast,
     Spacer,
+    Heading,
     useColorMode, useColorModeValue,
   } from '@chakra-ui/react';
   import GitHubCalendar from "react-github-calendar";
@@ -31,12 +32,16 @@ import {
   const Git=()=>{
     const [isHovering, setIsHovering] = useState(false);
     return <>
-
+       <Heading as="h2" size="2xl" textAlign="center" mb={12}>
+       My GitHub Contribution
+        </Heading>
       <Text  align='center' fontSize='4xl' padding={4}>My GitHub Contribution</Text>
       <Flex alignContent='center'justifyContent='center' gap={4}>
-        <Image className='gitlang' src='https://github-readme-stats.vercel.app/api?username=samarthbsss&theme=dark&hide_border=true&include_all_commits=false&count_private=true'/>
+        <Image className='gitlang' src='https://github-readme-stats.vercel.app/api?username=samarthbsss&theme=dark&hide_border=true&include_all_commits=false&count_private=true' />
+        <Box >
+        <Image className='gitlang' src="https://github-readme-streak-stats.herokuapp.com/?user=samarthbsss&theme=dark&hide_border=true"  />
 
-        <Image className='gitlang' src="https://github-readme-streak-stats.herokuapp.com/?user=samarthbsss&theme=dark&hide_border=true" />
+        </Box>
       </Flex>
       <div className="gitcal" style={{padding:'2rem',border:'1px solid red',marginLeft:'4rem', display:'flex', alignContent:'center', justifyContent:'center', width:'93%' }} >
       

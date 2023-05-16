@@ -35,13 +35,13 @@ const TechStacks = () => {
   return (
     <Box pt={8} pb={16}>
 
-      <Box maxW="7xl" mx="auto">
+      <Box maxW="7xl" mx="auto" >
         <Heading as="h2" size="2xl" textAlign="center" mb={12}>
           Relevant Tech Stacks
         </Heading>
         <Grid
           templateColumns={{
-            base: "repeat(1, 1fr)",
+            base: "repeat(2, 1fr)",
             md: "repeat(3, 1fr)",
             lg: "repeat(7, 1fr)",
           }}
