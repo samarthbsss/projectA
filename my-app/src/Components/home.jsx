@@ -19,7 +19,10 @@ const Home = () => {
   const primeColor =useColorModeValue('light.primary','dark.primary'); 
   return (
     <>
-    <Box w='100%' h='100%' >
+    <Box 
+    // w='100%' 
+    // h='100%'
+     >
       <Body  />
       <About/>
      
@@ -28,7 +31,7 @@ const Home = () => {
       <TechStacks/>
       <Git/>
       <Contact/>
-      <Footer/>
+      {/* <Footer/> */}
 
     </Box>
      <Navbar />

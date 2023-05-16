@@ -31,11 +31,19 @@ import {
 
   const Git=()=>{
     const [isHovering, setIsHovering] = useState(false);
+    const bgColor = useColorModeValue('light.bg', 'nav.bg');
+    const textColor = useColorModeValue('light.text', 'dark.text');
+    const primeColor = useColorModeValue('light.primary', 'dark.primary');
+
+
     return <>
-       <Heading as="h2" size="2xl" textAlign="center" mb={12}>
+    <Box  >
+
+    
+       <Heading as="h2" size="2xl" textAlign="center" mb={12} color={bgColor}>
        My GitHub Contribution
         </Heading>
-      <Text  align='center' fontSize='4xl' padding={4}>My GitHub Contribution</Text>
+      {/* <Text  align='center' fontSize='4xl' padding={4}>My GitHub Contribution</Text> */}
       <Flex alignContent='center'justifyContent='center' gap={4}>
         <Image className='gitlang' src='https://github-readme-stats.vercel.app/api?username=samarthbsss&theme=dark&hide_border=true&include_all_commits=false&count_private=true' />
         <Box >
@@ -43,7 +51,7 @@ import {
 
         </Box>
       </Flex>
-      <div className="gitcal" style={{padding:'2rem',border:'1px solid red',marginLeft:'4rem', display:'flex', alignContent:'center', justifyContent:'center', width:'93%' }} >
+      <div className="gitcal" style={{padding:'2rem',marginLeft:'4rem', display:'flex', alignContent:'center', justifyContent:'center', width:'93%' }} >
       
       <GitHubCalendar
           username="samarthbsss"
@@ -69,7 +77,7 @@ import {
         />
         </div>
       
-        
+        </Box>
     
 
     </>

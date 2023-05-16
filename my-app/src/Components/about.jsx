@@ -1,29 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import {
-  Flex,
-  Box,
-  Spacer,
-  Button,
-  IconButton,
-  useDisclosure,
-  Drawer,
-  DrawerOverlay,
-  DrawerContent,
-  DrawerCloseButton,
-  DrawerHeader,
-  DrawerBody,
-  Stack,
-  Image,
-  Text,
-  Heading,
-  UnorderedList,
-  ListItem,
-} from '@chakra-ui/react';
+import { useColorModeValue, Box, Image, Text, Heading } from '@chakra-ui/react';
 import gif from '../Images/gif.gif';
 import coding from '../Images/coding.gif';
 import work from '../Images/work.gif';
 
 const About = () => {
+  const bgColor = useColorModeValue('light.bg', 'nav.bg');
+  const textColor = useColorModeValue('light.text', 'dark.text');
+  const primeColor = useColorModeValue('light.primary', 'dark.primary');
   return (
     <>
       {/* <Heading
@@ -35,27 +19,32 @@ const About = () => {
         alignContent="center"
         justifyContent="space-around"
         padding="4rem"
-        ml={4}
-        mr={4}
+        mt={2}
+        mr={3}
         id="about"
-        border="1px solid red"
+        // border="1px solid red"
         width="100%"
         height="100%"
         display={{ base: 'block', md: 'flex' }}
-        
       >
-        <Image src={coding} borderRadius="50%" border="1px solid red" />
+        <Image
+          src={coding}
+          borderRadius="50%"
+          //  border="1px solid red"
+          ml={3}
+        />
         <Box
           // display='flex'  alignContent='center' justifyContent='center'
-          border="1px solid red"
+          // border="1px solid red"
           padding="4rem "
         >
           <Heading
             // as="h2"
+            color={bgColor}
             size="2xl"
             textAlign="center"
             //  mb={12}
-            border="1px solid red"
+            // border="1px solid red"
           >
             About me
           </Heading>

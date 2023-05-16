@@ -32,8 +32,7 @@ const Body = () => {
   };
   return (
     <>
-      <Box bg={bgColor} color={textColor}>
-        <Box background={'blue'} marginTop="rem"></Box>
+      <Box bg={bgColor} color={textColor} w="100%">
         <Flex
           // bg={bgColor}
           // bg='#4831D4'

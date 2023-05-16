@@ -33,6 +33,9 @@ import { FaGithub, FaLinkedin, FaEnvelope, FaPhone } from 'react-icons/fa';
 
 const Contact = () => {
   const aboutRef = useRef(null);
+  const bgColor = useColorModeValue('light.bg', 'dark.bg');
+  const textColor = useColorModeValue('light.text', 'dark.text');
+  const primeColor =useColorModeValue('light.primary','dark.primary'); 
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -89,16 +92,9 @@ const Contact = () => {
   };
 
   return (
-    <>
-    {/* <Link 
-    activeClass="active"
-            to="contact"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={500}>
 
-    </Link> */}
+    <>
+ 
     <Text align='center' fontSize='4xl'
     ref={aboutRef}
     >Send me a Message!</Text>
