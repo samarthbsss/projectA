@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import React, { useState,useRef } from "react";
+
 import {
+  useColorModeValue,
   Flex,
   Box,
   Spacer,
@@ -20,8 +22,12 @@ import { HamburgerIcon } from "@chakra-ui/icons";
 import { ColorModeSwitcher } from '../ColorModeSwitcher'
 
 const Navbar = () => {
+
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [isMobile, setIsMobile] = useState(false);
+  const bgColor = useColorModeValue('light.navbg', 'dark.navbg');
+  const textColor = useColorModeValue('light.navtxt', 'dark.navtxt');
+  const primeColor =useColorModeValue('light.primary','dark.primary');
 
   const toggleMobileNav = () => {
     setIsMobile(!isMobile);
@@ -35,8 +41,16 @@ const Navbar = () => {
       justify="space-between"
       wrap="wrap"
       padding="1.5rem"
-      bg="gray.900"
-      color="white"
+        // bg="gray.900"
+        // color="white"
+        // bg='black'
+        // color='black'
+      // bg={primeColor}
+      color={textColor}
+      bg={bgColor}
+      // bg='white'  
+      //  color={}
+      
       position='fixed'
       width='100%'
     top='0%'
@@ -76,7 +90,10 @@ const Navbar = () => {
           <Link href="#contact" fontWeight="medium">
             Contact
           </Link>
-          <Link href="#contact" fontWeight="medium">
+          <Link 
+          href="#contact"
+         
+           fontWeight="medium">
            Git
           </Link>
           <Link href="#project" fontWeight="medium">

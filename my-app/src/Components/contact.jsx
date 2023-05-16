@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useRef   } from 'react';
 import emailjs from '@emailjs/browser';
 import {
   ChakraProvider,
-  Icon, Link,
+  Icon,
+  //  Link,
   Box,
   Text,
   Formik,
-
+  Link,
   VStack,
   Code,
   Grid,
@@ -20,7 +21,6 @@ import {
   FormErrorMessage,
   FormHelperText,
   HStack,
- 
   Button,
   Textarea,
   useToast,
@@ -28,9 +28,12 @@ import {
 } from '@chakra-ui/react';
 import mes from '../Images/send.gif'
 import send from '../Images/send.svg'
+// import {  animateScroll as scroll } from 'react-scroll';
 import { FaGithub, FaLinkedin, FaEnvelope, FaPhone } from 'react-icons/fa';
 
 const Contact = () => {
+  const aboutRef = useRef(null);
+
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
@@ -87,7 +90,19 @@ const Contact = () => {
 
   return (
     <>
-     <Text align='center' fontSize='4xl'>Send me a Message!</Text>
+    {/* <Link 
+    activeClass="active"
+            to="contact"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}>
+
+    </Link> */}
+    <Text align='center' fontSize='4xl'
+    ref={aboutRef}
+    >Send me a Message!</Text>
+
      <Text align='center' fontSize='2xl'>Got a question or proposal, or just want to say hello? Go ahead.</Text>
   
       <Flex
