@@ -36,7 +36,7 @@ const TechStacks = () => {
   const primeColor =useColorModeValue('light.primary','dark.primary'); 
 
   return (
-    <Box pt={8} pb={16}>
+    <Box pt={8} pb={16}  id="skills">
 
       <Box maxW="7xl" mx="auto" >
         <Heading as="h2" size="2xl" textAlign="center" mb={12}   color={bgColor}>

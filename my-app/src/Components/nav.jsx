@@ -54,7 +54,7 @@ const Navbar = () => {
       position='fixed'
       width='100%'
     top='0%'
-     
+    id="nav-menu"
     >
       <Box>
         <Link href="/" fontSize="2xl" fontWeight="bold">

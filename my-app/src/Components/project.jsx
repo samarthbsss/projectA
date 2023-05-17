@@ -21,7 +21,7 @@ function Projects() {
   const primeColor = useColorModeValue('light.primary', 'dark.primary');
   return (
     
-    <Box width='100%' height='90%' bg={bgColor} color={textColor} pb='3rem' mb='2rem' >
+    <Box width='100%' height='90%' bg={bgColor} color={textColor} pb='3rem' mb='2rem' id="projects" >
        <Heading as="h2" size="2xl" textAlign="center"
         mb={12}
         p='2rem'

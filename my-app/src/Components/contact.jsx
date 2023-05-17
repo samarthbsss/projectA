@@ -4,6 +4,7 @@ import {
   ChakraProvider,
   Icon,
   //  Link,
+  Spinner,
   Box,
   Text,
   Formik,
@@ -18,6 +19,7 @@ import {
   Input,
   Image,
   FormLabel,
+  Heading,
   FormErrorMessage,
   FormHelperText,
   HStack,
@@ -33,20 +35,24 @@ import { FaGithub, FaLinkedin, FaEnvelope, FaPhone } from 'react-icons/fa';
 
 const Contact = () => {
   const aboutRef = useRef(null);
-  const bgColor = useColorModeValue('light.bg', 'dark.bg');
+  const bgColor = useColorModeValue('light.bg', 'nav.bg');
   const textColor = useColorModeValue('light.text', 'dark.text');
   const primeColor =useColorModeValue('light.primary','dark.primary'); 
+  const buttonColor=useColorModeValue('light.bg','white');
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [isSent, setIsSent] = useState(false);
 
     const toast=useToast();
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    
+    setIsLoading(true);
+
 
     const templateParams = {
       from_name: name,
@@ -54,6 +60,7 @@ const Contact = () => {
       message: message,
     };
     if(name===''|| email===''||message===''){
+     
         return toast({
            status:'error',
 
@@ -61,7 +68,9 @@ const Contact = () => {
            title:'Enter all the Details',
            isClosable: true,
         })
+       
     }
+
 
     emailjs
       .send(
@@ -85,21 +94,37 @@ const Contact = () => {
           duration: 9000,
           isClosable: true,
     })
+    
+    
 
     setName('');
     setEmail('');
     setMessage('');
   };
 
+
+ 
+
+  const handleSend = () => {
+    // setIsLoading(true);
+
+    // Simulating an API call
+    setTimeout(() => {
+      setIsLoading(false);
+      setIsSent(true);
+    }, 2000);
+  };
+
+
   return (
 
     <>
- 
-    <Text align='center' fontSize='4xl'
+ <Heading as="h2" size="2xl" textAlign="center" mb={12} color={bgColor}> Send me a Message!</Heading>
+    {/* <Text align='center' fontSize='4xl'
     ref={aboutRef}
-    >Send me a Message!</Text>
+    bg={bgColor} color={textColor} p={2} mt='1rem'>Send me a Message!</Text> */}
 
-     <Text align='center' fontSize='2xl'>Got a question or proposal, or just want to say hello? Go ahead.</Text>
+     <Text  align='center' fontSize='2xl'>Got a question or proposal, or just want to say hello? Go ahead.</Text>
   
       <Flex
       onMouseEnter={() => setIsPlaying(true)}
@@ -110,7 +135,7 @@ const Contact = () => {
       id='contact'
       >
         
-   <Box width='45rem' height='45rem'>
+   <Box width='100%' height='45rem'>
     <Image src={isPlaying ? mes : send} alt="Preview" height='100%'weight='100%' 
       // borderRadius="full" // This sets the border radius to make it round
       // overflow="hidden" // This ensures the GIF stays within the rounded border
@@ -119,11 +144,21 @@ const Contact = () => {
         />
    </Box>
    
-      <Box paddingTop='5rem' border='1px solid red'>
+      <Box paddingTop='5rem'
+      //  border='1px solid red'
+         w='100%' h='100%'>
      
-    <HStack paddingLeft='30%' spacing={4} gap={2}>
-      <Link href="https://github.com/samarthbsss"  target="_blank">
-        <Icon as={FaGithub} boxSize={6} />
+    <HStack 
+     color={buttonColor}
+    spacing={4} gap={2} display='flex'
+            justifyContent='center'
+            alignContent='center' 
+            
+            >
+      <Link href="https://github.com/samarthbsss"  target="_blank" >
+        <Icon as={FaGithub} boxSize={6} _hover={{
+            scale: '1.1',
+            transition: "0.5s"}}/>
       </Link>
       <Link href="https://www.linkedin.com/in/samarthbsacharya/"  target="_blank">
         <Icon as={FaLinkedin} boxSize={6} />
@@ -136,19 +171,48 @@ const Contact = () => {
       </Link>
     </HStack>
         <form  onSubmit={handleSubmit} >
-
-        
         <FormControl>
-        <FormLabel>Name</FormLabel>
-          <Input type="text" placeholder='Enter Your Name' value={name} onChange={(e) => setName(e.target.value)}/>
+        <FormLabel>Your Name</FormLabel>
+          <Input type="text" placeholder='Enter Your Name' value={name} onChange={(e) => setName(e.target.value)} m={2}/>
          
           <FormLabel>Email address</FormLabel>
-          <Input type="email" placeholder='Enter Your Email' value={email} onChange={(e) => setEmail(e.target.value)}/>
+          <Input type="email" placeholder='Enter Your Email' value={email} onChange={(e) => setEmail(e.target.value)} m={2}/>
           {/* <FormHelperText>We'll never share your email.</FormHelperText> */}
        
-
-          <Textarea placeholder='Drop me a message!'  value={message} onChange={(e) => setMessage(e.target.value)} />
-            <Button type='submit'>Submit</Button>
+          <FormLabel>Your Message</FormLabel>
+          <Textarea placeholder='Drop me a message!'  value={message} onChange={(e) => setMessage(e.target.value)}m={2} />
+            {/* <Button type='submit'>Submit</Button> */}
+    <Box  display='flex'
+            justifyContent='center'
+            alignContent='center'>
+               <Button
+          mt='1rem'
+          width='15rem'
+          type='submit'
+   colorScheme="teal"
+   size="md"
+  //  bg={bgColor}
+    bg={buttonColor}
+  // textColor='black'
+  //  color={bgColor}
+   isLoading={isLoading}
+   disabled={isSent}
+   onClick={handleSend}
+   loadingText="Sending..."
+   spinner={<Spinner color="textColor" size="sm" />}
+   _disabled={{
+     opacity: 0.6,
+     cursor: "not-allowed",
+   }}
+   _hover={{bg:"" ,
+   scale: '1.1',
+   transition: "0.5s"}}
+ >
+   Send
+ </Button>
+   
+    </Box>
+           
         </FormControl>
         </form>
 

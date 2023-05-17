@@ -37,10 +37,9 @@ import {
 
 
     return <>
-    <Box  >
-
     
-       <Heading as="h2" size="2xl" textAlign="center" mb={12} color={bgColor}>
+    <Box mb='4rem' >
+      <Heading as="h2" size="2xl" textAlign="center" mb={12} color={bgColor}>
        My GitHub Contribution
         </Heading>
       {/* <Text  align='center' fontSize='4xl' padding={4}>My GitHub Contribution</Text> */}

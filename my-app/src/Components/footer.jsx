@@ -1,15 +1,31 @@
-import { Box, Text } from "@chakra-ui/react";
+import { Box, Text ,Divider,useColorModeValue } from "@chakra-ui/react";
 import { AiFillHeart } from "react-icons/ai";
+import '../Css/footer.css'
 
 function Footer() {
-  return (
-    <Box bg="gray.800" py={4}>
+  const bgColor = useColorModeValue('#4831D4', 'black');
+  const textColor = useColorModeValue('light.text', 'dark.text');
+  const primeColor = useColorModeValue('light.primary', 'dark.primary');
+
+  return <>  
+    <Divider/>
+    
+    <Box py={4} bg={bgColor} pt='2rem' pb='2rem'>
+       
       <Text textAlign="center" color="white" fontSize="sm">
-        © 2023 Built by Samarth BS. All rights reserved.
+ 
+        © 2023 Built by Samarth BS
+              <span>    <AiFillHeart className="heart-beat"/></span>. 
+              All rights reserved.  
+     
+       
       </Text>
-      <AiFillHeart style={{color:'red',marginTop:'5px', paddingTop:'10px'}}/>
+   
     </Box>
-  );
+  
+    </>
+ 
 }
 
 export default Footer;
+

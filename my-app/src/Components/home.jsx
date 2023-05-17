@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Box, useColorModeValue,} from '@chakra-ui/react';
 import Navbar from './nav';
 import Body from './body';
-
+import ScrollToTopButton from './button';
 import About from './about';
 import Contact from './contact';
 import Footer from './footer';
@@ -22,6 +22,7 @@ const Home = () => {
     <Box 
     // w='100%' 
     // h='100%'
+    id="home"
      >
       <Body  />
       <About/>
@@ -29,12 +30,13 @@ const Home = () => {
        <Projects/>
        
       <TechStacks/>
-      <Git/>
+      {/* <Git/> */}
       <Contact/>
-      {/* <Footer/> */}
+      <Footer/>
 
     </Box>
      <Navbar />
+     <ScrollToTopButton/>
    
    
     
