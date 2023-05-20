@@ -11,16 +11,15 @@ import {
   Icon,
 } from '@chakra-ui/react';
 import {
-  FaCode,
-  FaDatabase,
-  FaServer,
   FaGithub,
   FaLinkedin,
   FaEnvelope,
   FaPhone,
 } from 'react-icons/fa';
 import Typewriter from 'typewriter-effect';
-import styles from '../Css/body.css';
+// import profile from '../Images/profile.jpg'
+import profile from '../Images/removal.png'
+import '../Css/body.css';
 
 const Body = () => {
   const bgColor = useColorModeValue('light.bg', 'dark.bg');
@@ -31,40 +30,48 @@ const Body = () => {
     fontSize: '30px',
   };
   return (
-    <>
+    <> 
       <Box bg={bgColor} color={textColor} w="100%">
+        
         <Flex
-          // bg={bgColor}
-          // bg='#4831D4'
-          // color='#CCF381'
-          // color={textColor}
-          // p={4}
-          // mt='7rem'
           mb="7rem"
           p={{ base: '1rem', md: '5rem' }}
           // p='5rem'
           alignContent="center"
           justifyContent="center"
           display={{ base: 'block', md: 'flex' }}
-          // border='1px solid red'
-          mt={{ base: '2rem', md: '5rem' }}
+          mt={{ base: '5rem', md: '5rem' }}
         >
           <Box
             display="flex"
             alignContent="center"
             justifyContent="center"
-            p={{ base: '1rem', md: '5rem' }}
-            // p={10}
+            position='relative'
+            // p={{ base: '1rem', md: '5rem' }}
+            p={1}
             // m={10}
             // border='1px solid red'
+            width='20%'
+            // width="100%"
+            height="20%"
+            borderRadius="full"
+            // ml={3}
+            className='box'
           >
             <Image
+             boxShadow='2xl'
               width="100%"
               height="100%"
               borderRadius="full"
-              boxSize="20rem"
-              src="https://avatars.githubusercontent.com/u/25184865?v=4"
+              // border='1px solid red'
+              // boxSize="20rem"
+              src={profile}
               alt="MyProfile"
+              objectFit="cover"
+              // position="absolute"
+          
+              zIndex={0}
+              transition="transform 0.3s ease"
             />
           </Box>
           <Box
@@ -148,5 +155,41 @@ const Body = () => {
     </>
   );
 };
+
+// const ProfilePage = () => {
+//   return (
+//     <Flex align="center">
+//       <Box w="200px" h="200px" position="relative">
+//         <Image
+//           src={profile} // Replace with your image URL
+//           alt="Profile Image"
+//           w="100%"
+//           h="100%"
+//           objectFit="cover"
+//           position="absolute"
+//           zIndex={1}
+//           transition="transform 0.3s ease"
+//         />
+//         <Box
+//           w="100%"
+//           h="100%"
+//           position="absolute"
+//           top={0}
+//           left={0}
+//           bg="rgba(0, 0, 0, 0.5)"
+//           opacity={0}
+//           zIndex={2}
+//           transition="opacity 0.3s ease"
+//         />
+//       </Box>
+//       <Box ml="20px">
+//         <Text fontSize="24px" fontWeight="bold">Your Name</Text>
+//         <Text fontSize="16px">Additional profile information</Text>
+//       </Box>
+//     </Flex>
+//   );
+// };
+
+// export default ProfilePage;
 
 export default Body;

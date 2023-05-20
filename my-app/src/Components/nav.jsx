@@ -41,20 +41,13 @@ const Navbar = () => {
       justify="space-between"
       wrap="wrap"
       padding="1.5rem"
-        // bg="gray.900"
-        // color="white"
-        // bg='black'
-        // color='black'
-      // bg={primeColor}
       color={textColor}
       bg={bgColor}
-      // bg='white'  
-      //  color={}
-      
       position='fixed'
       width='100%'
     top='0%'
     id="nav-menu"
+    boxShadow='xl'
     >
       <Box>
         <Link href="/" fontSize="2xl" fontWeight="bold">
@@ -87,22 +80,21 @@ const Navbar = () => {
           <Link href="#about" fontWeight="medium">
             About
           </Link>
-          <Link href="#contact" fontWeight="medium">
-            Contact
-          </Link>
-          <Link 
-          href="#contact"
-         
-           fontWeight="medium">
-           Git
-          </Link>
           <Link href="#project" fontWeight="medium">
            Projects
+          </Link>
+          <Link href="#contact" fontWeight="medium">
+            Contact
           </Link>
           <Link href="#skills" fontWeight="medium">
            Skills
           </Link>
-          <Link href="#resume" fontWeight="medium">
+          <Link 
+          href="#git"
+          fontWeight="medium">
+           Git
+          </Link>
+          <Link href="https://www.dropbox.com/s/ihis5hwt9az766w/Samarthbs.pdf?dl=0" fontWeight="medium" target='_blank'>
            Resume
           </Link> 
         </Stack>
